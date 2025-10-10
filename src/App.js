@@ -5,7 +5,6 @@ import rentloopImg from './assets/rentloop.png';
 import algoArenaImg from './assets/algo-arena.png';
 import smartClassroomImg from './assets/smart-classroom.png';
 import bloodBankImg from './assets/blood-bank.png';
-
 import sixsigmaImg from './assets/sixsigma.png';
 import nptelImg from './assets/nptel.jpg';
 import webdevImg from './assets/webdev.jpg';
@@ -299,7 +298,7 @@ function App() {
       {
         img: hackathonImg,
         title: "Intercollege 24-Hour Hackathon",
-        desc: "Won at intercollege hackathon for innovation and problem-solving.",
+        desc: "Participated at intercollege hackathon for innovation and problem-solving.",
         link: "https://drive.google.com/file/d/1bcRn3aMYiwhjhIf6GnDooL2AFLFYTz7Y/view?usp=drive_link"
       }
     ].map((ach, i) => (
