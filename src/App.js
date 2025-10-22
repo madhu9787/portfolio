@@ -121,7 +121,7 @@ function App() {
             <button className="toggle-btn" onClick={() => toggleProject(0)}>
               {expanded[0] ? "Hide Details" : "Show Details"}
             </button>
-            <a href="https://github.com/madhu9787/rent" target="_blank" className="github-btn">View on GitHub</a>
+            <a href="https://github.com/madhu9787/rent-final" target="_blank" className="github-btn">View on GitHub</a>
             {expanded[0] && (
               <div className="project-details">
                 <p>Facilitates renting with smart listings, advanced filters, real-time availability.</p>
