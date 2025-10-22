@@ -20,6 +20,8 @@ import ciscoImg from './assets/cisco.png';
 import mernImg from './assets/mern.jpg';
 import nodeImg from './assets/node.jpg';
 import emailjs from 'emailjs-com';
+import libraryImg from './assets/java.jpg';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 import { FaJava, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaBootstrap, FaGithub,FaCode } from "react-icons/fa";
 import { SiMongodb, SiFirebase, SiExpress} from "react-icons/si";
@@ -109,82 +111,120 @@ function App() {
           </div>
         </div>
       </section>
+{/* Projects Section */}
+<section id="projects" className="projects-section">
+  <h2 className="projects-title">Projects</h2>
+  <div className="projects-container">
 
-      {/* Projects Section */}
-      <section id="projects" className="projects-section">
-        <h2 className="projects-title">Projects</h2>
-        <div className="projects-container">
-
-          {/* Project 1 */}
-          <div className="project-card">
-            <img src={rentloopImg} alt="RentLoop" className="project-img" />
-            <h3>Design and Development of RentLoop Platform</h3>
-            <button className="toggle-btn" onClick={() => toggleProject(0)}>
-              {expanded[0] ? "Hide Details" : "Show Details"}
-            </button>
-            <a href="https://github.com/madhu9787/rent-final" target="_blank" className="github-btn">View on GitHub</a>
-            {expanded[0] && (
-              <div className="project-details">
-                <p>Facilitates renting with smart listings, advanced filters, real-time availability.</p>
-                <p><strong>Duration:</strong> Jul 2025 – Present</p>
-                <p><strong>Tech Stack:</strong> MongoDB, Express.js, React.js, Node.js, Twilio</p>
-              </div>
-            )}
-          </div>
-
-          {/* Project 2 */}
-          <div className="project-card">
-            <img src={algoArenaImg} alt="Algo Arena" className="project-img" />
-            <h3>Algo Arena - A Gamified Coding Platform</h3>
-            <button className="toggle-btn" onClick={() => toggleProject(1)}>
-              {expanded[1] ? "Hide Details" : "Show Details"}
-            </button>
-            <a href="https://github.com/madhu9787/algo" target="_blank" className="github-btn">View on GitHub</a>
-            {expanded[1] && (
-              <div className="project-details">
-                <p>Built with multiple levels and score tracking to make learning programming interactive.</p>
-                <p><strong>Duration:</strong> Jan 2025 – Mar 2025</p>
-                <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Firebase</p>
-              </div>
-            )}
-          </div>
-
-          {/* Project 3 */}
-          <div className="project-card">
-            <img src={smartClassroomImg} alt="Smart Classroom" className="project-img" />
-            <h3>Smart Classroom Management System - Hackathon Project</h3>
-            <button className="toggle-btn" onClick={() => toggleProject(2)}>
-              {expanded[2] ? "Hide Details" : "Show Details"}
-            </button>
-            <a href="https://github.com/madhu9787" target="_blank" className="github-btn">View on GitHub</a>
-            {expanded[2] && (
-              <div className="project-details">
-                <p>Developed an interactive system with Twilio, automated attendance, and real-time reporting.</p>
-                <p><strong>Duration:</strong> Sep 2024 – Dec 2024</p>
-                <p><strong>Tech Stack:</strong> Twilio, HTML, CSS, JavaScript, Firebase</p>
-              </div>
-            )}
-          </div>
-
-          {/* Project 4 */}
-          <div className="project-card">
-            <img src={bloodBankImg} alt="Blood Bank" className="project-img" />
-            <h3>Blood Bank Management System</h3>
-            <button className="toggle-btn" onClick={() => toggleProject(3)}>
-              {expanded[3] ? "Hide Details" : "Show Details"}
-            </button>
-            <a href="https://github.com/madhu9787/BBM.github.io" target="_blank" className="github-btn">View on GitHub</a>
-            {expanded[3] && (
-              <div className="project-details">
-                <p>Developed a management system to track blood donors, stock, and availability efficiently.</p>
-                <p><strong>Duration:</strong> Mar 2024 – Jun 2024</p>
-                <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Node.js</p>
-              </div>
-            )}
-          </div>
-
+    {/* Project 1 */}
+    <div className="project-card">
+      <img src={rentloopImg} alt="RentLoop" className="project-img" />
+      <h3>Design and Development of RentLoop Platform</h3>
+      <div className="buttons-container">
+        <button className="toggle-btn" onClick={() => toggleProject(0)}>
+          {expanded[0] ? "Hide Details" : "Show Details"}
+        </button>
+        <a href="https://github.com/madhu9787/rent-final" target="_blank" className="github-btn">
+          View on GitHub
+        </a>
+      </div>
+      {expanded[0] && (
+        <div className="project-details">
+          <p>Facilitates renting with smart listings, advanced filters, real-time availability.</p>
+          <p><strong>Duration:</strong> Jul 2025 – Present</p>
+          <p><strong>Tech Stack:</strong> MongoDB, Express.js, React.js, Node.js, Twilio</p>
         </div>
-      </section>
+      )}
+    </div>
+
+    {/* Project 2 */}
+    <div className="project-card">
+      <img src={algoArenaImg} alt="Algo Arena" className="project-img" />
+      <h3>Algo Arena - A Gamified Coding Platform</h3>
+      <div className="buttons-container">
+        <button className="toggle-btn" onClick={() => toggleProject(1)}>
+          {expanded[1] ? "Hide Details" : "Show Details"}
+        </button>
+        <a href="https://github.com/madhu9787/algo" target="_blank" className="github-btn">
+          View on GitHub
+        </a>
+      </div>
+      {expanded[1] && (
+        <div className="project-details">
+          <p>Built with multiple levels and score tracking to make learning programming interactive.</p>
+          <p><strong>Duration:</strong> Jan 2025 – Mar 2025</p>
+          <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Firebase</p>
+        </div>
+      )}
+    </div>
+
+    {/* Project 3 */}
+    <div className="project-card">
+      <img src={smartClassroomImg} alt="Smart Classroom" className="project-img" />
+      <h3>Smart Classroom Management System - Hackathon Project</h3>
+      <div className="buttons-container">
+        <button className="toggle-btn" onClick={() => toggleProject(2)}>
+          {expanded[2] ? "Hide Details" : "Show Details"}
+        </button>
+        <a href="https://github.com/praveenkumar0031/SIHproject" target="_blank" className="github-btn">
+          View on GitHub
+        </a>
+      </div>
+      {expanded[2] && (
+        <div className="project-details">
+          <p>Developed an interactive system with Twilio, automated attendance, and real-time reporting.</p>
+          <p><strong>Duration:</strong> Sep 2024 – Dec 2024</p>
+          <p><strong>Tech Stack:</strong> Twilio, HTML, CSS, JavaScript, Firebase</p>
+        </div>
+      )}
+    </div>
+
+    {/* Project 4 */}
+    <div className="project-card">
+      <img src={bloodBankImg} alt="Blood Bank" className="project-img" />
+      <h3>Blood Bank Management System</h3>
+      <div className="buttons-container">
+        <button className="toggle-btn" onClick={() => toggleProject(3)}>
+          {expanded[3] ? "Hide Details" : "Show Details"}
+        </button>
+        <a href="https://github.com/madhu9787/BBM.github.io" target="_blank" className="github-btn">
+          View on GitHub
+        </a>
+      </div>
+      {expanded[3] && (
+        <div className="project-details">
+          <p>Developed a management system to track blood donors, stock, and availability efficiently.</p>
+          <p><strong>Duration:</strong> Mar 2024 – Jun 2024</p>
+          <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Node.js</p>
+        </div>
+      )}
+    </div>
+
+    {/* Project 5 */}
+    <div className="project-card">
+      <img src={libraryImg} alt="Library Management System" className="project-img" />
+      <h3>Java Console-based Library Management System</h3>
+      <div className="buttons-container">
+        <button className="toggle-btn" onClick={() => toggleProject(4)}>
+          {expanded[4] ? "Hide Details" : "Show Details"}
+        </button>
+        <a href="https://github.com/madhu9787/console-java" target="_blank" className="github-btn">
+          View on GitHub
+        </a>
+      </div>
+      {expanded[4] && (
+        <div className="project-details">
+          <p>Console-based system to manage library books, users, and borrowing transactions efficiently.</p>
+          <p><strong>Duration:</strong> Feb 2024 – Mar 2024</p>
+          <p><strong>Tech Stack:</strong> Java</p>
+        </div>
+      )}
+    </div>
+
+  </div>
+</section>
+
+
   <section id="skills" className="skills-section">
   <h2 className="skills-title">Skills</h2>
 
@@ -348,7 +388,6 @@ function App() {
   </div>
 </section>
 
-{/* 🌐 Contact Section */}
 <section id="contact" className="contact-section">
   <h2 className="contact-title">Connect With Me ✨</h2>
 
@@ -356,13 +395,12 @@ function App() {
     I’m always excited to connect! Reach out through any of the platforms below.
   </p>
 
-  {/* 🔗 Contact Links */}
+  {/* Contact Links (keep as is) */}
   <div className="contact-links">
     <a href="tel:+918056327230" className="contact-icon phone">
-      <i className="fa-solid fa-phone"></i>
+      <i className="fas fa-phone-alt"></i>
       <span>+91 8056327230</span>
     </a>
-
     <a
       href="https://github.com/madhu9787"
       target="_blank"
@@ -372,68 +410,86 @@ function App() {
       <i className="fab fa-github"></i>
       <span>GitHub</span>
     </a>
-
     <a
       href="http://www.linkedin.com/in/madhumitha8056/"
       target="_blank"
       rel="noopener noreferrer"
       className="contact-icon linkedin"
     >
-      <i className="fab fa-linkedin"></i>
+      <i className="fab fa-linkedin-in"></i>
       <span>LinkedIn</span>
     </a>
-
-    <a href="https://leetcode.com/u/madhumithamadhumitha/" target="_blank" rel="noopener noreferrer" className="contact-icon leetcode">
-      <i className="fa-solid fa-code"></i>
+    <a
+      href="https://leetcode.com/u/madhumithamadhumitha/"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="contact-icon leetcode"
+    >
+      <i className="fas fa-laptop-code"></i>
       <span>LeetCode</span>
     </a>
-
     <a href="mailto:madhumitha805632@gmail.com" className="contact-icon mail">
-      <i className="fa-solid fa-envelope"></i>
+      <i className="fas fa-envelope"></i>
       <span>Email Me</span>
     </a>
   </div>
 
-  {/* 📩 Contact Form */}
-  <div className="contact-form-container">
-    <h3>Contact Me</h3>
-    <form
-      className="contact-form"
-      onSubmit={(e) => {
-        e.preventDefault();
-        emailjs.sendForm(
-          'service_cdqwgbl',      // Your EmailJS service ID
-          'template_d036gsk',     // Your EmailJS template ID
-          e.target,               // The form element
-          'hVoE8qiPdv_1ydv9F'    // Your EmailJS public key
-        )
-        .then(
-          (result) => {
-            console.log(result.text);
-            alert("Thanks for reaching out! I’ll get back to you soon 💌");
-            e.target.reset(); // Clear form after submission
-          },
-          (error) => {
-            console.log(error.text);
-            alert("Failed to send message. Please try again later.");
-          }
-        );
-      }}
-    >
-      <input type="text" name="name" placeholder="Your Name" required />
-<input type="email" name="email" placeholder="Your Email" required />
-<textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
+  {/* Flex container for video + form */}
+  <div className="contact-form-main">
+    {/* Left Video */}
+    <div className="contact-video">
+      <video
+        src={require('./assets/mad.mp4')}
+        autoPlay
+        loop
+        muted
+        playsInline
+      ></video>
+    </div>
 
-      <button type="submit" className="send-btn">
-        Send Message 🚀
-      </button>
-    </form>
+   {/* Right Contact Form */}
+<div className="contact-form-container">
+  <h3 className="typewriter-text">Let’s Build Something Together 💬</h3>
+  <form
+    className="contact-form"
+    onSubmit={(e) => {
+      e.preventDefault();
+      emailjs.sendForm(
+        'service_cdqwgbl',
+        'template_d036gsk',
+        e.target,
+        'hVoE8qiPdv_1ydv9F'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+          alert("Your message has been sent! I’ll reach out soon ✨");
+          e.target.reset();
+        },
+        (error) => {
+          console.log(error.text);
+          alert("Oops! Something went wrong. Please try again later.");
+        }
+      );
+    }}
+  >
+    <input type="text" name="name" placeholder="Enter your full name" required />
+    <input type="email" name="email" placeholder="Enter your email address" required />
+    <textarea name="message" rows="5" placeholder="Type your message here..." required></textarea>
+
+    <button type="submit" className="send-btn">
+      Send Message ✨
+    </button>
+  </form>
+</div>
+
   </div>
 </section>
 
+
 {/* 🌟 Footer */}
 <footer className="footer">
-  <p>💜 Thanks for visiting my portfolio 💜</p>
+  <p> 🤍Thanks for visiting my portfolio🤍</p>
   <small>© 2025 Madhumitha | Designed with passion 💫</small>
 </footer>
 

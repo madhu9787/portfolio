@@ -225,7 +225,7 @@ html {
   border: 2px solid transparent;
   border-image: linear-gradient(45deg, #00bfff, #0077ff, #00ffcc, #00bfff) 1;
   backdrop-filter: blur(12px);
-  box-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+ box-shadow: 0 0 15px rgba(0, 191, 255, 0.1); 
   padding: 50px 40px;
   max-width: 800px;
   width: 90%;
@@ -235,11 +235,6 @@ html {
   transform: translateY(30px);
 }
 
-.about-container:hover {
-  box-shadow: 0 0 60px rgba(0, 191, 255, 0.9);
-  transform: scale(1.03);
-  transition: 0.4s ease;
-}
 
 /* Title & Neon Underline */
 .about-title {
@@ -275,6 +270,12 @@ html {
   line-height: 1.8;
   text-align: justify;
 }
+.about-container:hover {
+  box-shadow: 0 0 35px rgba(0, 191, 255, 0.5); /* softer glow */
+  transform: scale(1.01); /* very slight scaling */
+  transition: 0.4s ease;
+}
+
 
 /* Fade-in Animation */
 @keyframes fadeInUp {
@@ -333,18 +334,13 @@ body:hover {
   width: 300px;
   color: white;
   text-align: center;
-  box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
-  transition: all 0.4s ease;
+  
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
   position: relative;
   z-index: 1;
 }
 
-.edu-card:hover {
-  box-shadow: 0 0 50px rgba(0, 191, 255, 0.9), 0 0 80px rgba(0, 255, 204, 0.7);
-  transform: translateY(-10px) scale(1.05);
-  background: rgba(0, 0, 50, 0.8);
-  border-image: linear-gradient(135deg, #00ffcc, #00bfff, #0077ff, #00ffcc) 1;
-}
+
 
 /* Card Heading */
 .edu-card h3 {
@@ -378,14 +374,14 @@ body:hover {
 /* Neon Spark Effect */
 .spark {
   position: absolute;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
+  width: 1px;          /* smaller spark */
+  height: 1px;         /* smaller spark */
+  border-radius: 10%;
   background: radial-gradient(circle, #00bfff, transparent);
   pointer-events: none;
-  animation: sparkMove 1s ease-out forwards;
+  animation: sparkMove 0.6s ease-out forwards; /* shorter duration */
   z-index: 9999;
-  opacity: 0.8;
+  opacity: 0.1;        /* less bright */
 }
 
 @keyframes sparkMove {
@@ -395,10 +391,10 @@ body:hover {
 
 /* Card reacts to cursor position */
 .edu-card:hover {
-  box-shadow: 0 0 60px rgba(0, 191, 255, 0.9), 0 0 100px rgba(0, 255, 204, 0.7);
-  transform: translateY(-10px) scale(1.05) rotate(-1deg);
+  box-shadow: 0 0 20px rgba(0, 191, 255, 0.3), 0 0 30px rgba(0, 255, 204, 0.2); /* softer glow */
+  transform: translateY(-2px) scale(1.01) rotate(-0.3deg); /* very slight movement */
+  transition: 0.4s ease;
 }
-
 /* Projects Section */
 .projects-section {
   padding: 80px 20px;
@@ -415,11 +411,13 @@ body:hover {
   text-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
 }
 
+/* Container for all project cards */
 .projects-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
+  align-items: flex-start;
 }
 
 /* Project Card */
@@ -433,8 +431,8 @@ body:hover {
 }
 
 .project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px #00bfff, 0 0 40px #00bfff inset;
+  transform: scale(1.02);
+  box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff inset;
 }
 
 /* Project Image */
@@ -451,11 +449,19 @@ body:hover {
   transform: scale(1.05);
 }
 
+/* Buttons Container */
+.buttons-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap; /* wraps on small screens */
+}
+
 /* Buttons */
 .toggle-btn, .github-btn {
-  margin-top: 10px;
-  margin-right: 10px;
-  padding: 8px 16px;
+  flex: 1;              /* same width */
+  max-width: 150px;     /* optional: limit maximum width */
+  padding: 10px 0;
   font-weight: bold;
   border: none;
   border-radius: 8px;
@@ -464,7 +470,7 @@ body:hover {
   background: #00bfff;
   transition: all 0.3s ease;
   text-decoration: none;
-  display: inline-block;
+  text-align: center;
 }
 
 .toggle-btn:hover, .github-btn:hover {
@@ -490,7 +496,8 @@ body:hover {
     align-items: center;
   }
 }
-/* Skills Section */
+
+
 .skills-section {
   padding: 80px 20px;
   background: rgba(0, 15, 40, 0.85);
@@ -605,10 +612,12 @@ body:hover {
 }
 
 .ripple-card-inner:hover {
-  transform: rotateY(15deg) scale(1.07);
-  box-shadow: 0 0 35px #00ffff, 0 0 60px #0077ff;
-  background: linear-gradient(135deg, #001a33, #003366);
+  transform: rotateY(5deg) scale(1.02); /* smaller tilt and scale */
+  box-shadow: 0 0 15px #00ffff, 0 0 25px #0077ff; /* softer glow */
+  background: linear-gradient(135deg, #001a33, #00264d); /* slightly lighter gradient */
+  transition: 0.4s ease;
 }
+
 
 .ripple-card-inner::after {
   content: "";
@@ -638,12 +647,14 @@ body:hover {
 
 .certificate-img {
   width: 100%;
-  height: 160px;
-  object-fit: cover;
+  height: 160px;       /* fixed height for all images */
+  object-fit: cover;   /* ensures image fills container without distortion */
   border-radius: 10px;
   margin-bottom: 10px;
   box-shadow: 0 0 12px #00bfff;
+  display: block;
 }
+
 
 .view-btn {
   display: inline-block;
@@ -690,7 +701,7 @@ body:hover {
 
 .contact-intro {
   font-size: 1.2rem;
-  color: #80dfff;
+  color:white;
   margin-bottom: 40px;
   text-shadow: 0 0 8px #00ffff;
 }
@@ -788,7 +799,7 @@ body:hover {
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: #00ffff;
-  box-shadow: 0 0 15px #00bfff, 0 0 25px #00ffff inset;
+  box-shadow: 0 0 5px #00bfff, 0 0 10px #00ffff inset;
   outline: none;
 }
 
@@ -808,6 +819,73 @@ body:hover {
   transform: scale(1.05);
   box-shadow: 0 0 25px #00bfff, 0 0 40px #00ffff inset;
 }
+ .contact-form-container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+
+.contact-form-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 40px; /* space between video and form */
+  flex-wrap: wrap;
+}
+
+/* Video styling - add left margin */
+.contact-video video {
+  width: 400px;   
+  height: 350px;
+  max-width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 25px #00bfff, 0 0 40px #00ffff inset;
+  object-fit: cover;
+  margin-left: 80px; /* shift right */
+  margin-top: 60px;  /* move down slightly */
+}
+
+/* Contact form container on the right */
+.contact-form-container {
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Responsive for mobile */
+@media (max-width: 1024px) {
+  .contact-form-main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-video video {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+    margin-left: 0; /* remove margin on small screens */
+  }
+}
+
+/* Typewriter effect for Contact heading */
+/* Slow & continuous typewriter effect */
+.typewriter-text {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid #00bfff;
+  width: 0;
+  animation: typing 6s steps(40, end) infinite alternate,
+             blink 1s step-end infinite;
+}
+
+@keyframes typing {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 0; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
 
 /* Footer */
 .footer {
@@ -820,7 +898,7 @@ body:hover {
 
 .footer p {
   font-size: 1.2rem;
-  color: #00bfff;
+  color: #ffffff;
   text-shadow: 0 0 12px #00ffff;
   margin-bottom: 5px;
 }
@@ -837,8 +915,4 @@ body:hover {
     align-items: center;
   }
 
-  .contact-form-container {
-    width: 100%;
-    padding: 0 10px;
-  }
 }
