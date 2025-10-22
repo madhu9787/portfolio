@@ -19,9 +19,10 @@ import journal3Img from './assets/journal3.jpg';
 import ciscoImg from './assets/cisco.png';
 import mernImg from './assets/mern.jpg';
 import nodeImg from './assets/node.jpg';
+import emailjs from 'emailjs-com';
 
-import { FaJava, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaBootstrap, FaGithub } from "react-icons/fa";
-import { SiMongodb, SiFirebase, SiExpress } from "react-icons/si";
+import { FaJava, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaBootstrap, FaGithub,FaCode } from "react-icons/fa";
+import { SiMongodb, SiFirebase, SiExpress} from "react-icons/si";
 function App() {
   const [expanded, setExpanded] = useState([false, false, false, false]);
 
@@ -59,7 +60,7 @@ function App() {
           <li><a href="#achievements">Achievements</a></li>
           <li><a href="#contact">Contact Me</a></li>
         </ul>
-        <a href="/resume.pdf" className="resume-button" download>📄 Resume</a>
+        <a href="/resume.pdf" className="resume-button" download="madhumitha resume.pdf">📄 Resume</a>
       </nav>
 
       {/* Background Overlay */}
@@ -188,45 +189,46 @@ function App() {
   <h2 className="skills-title">Skills</h2>
 
   {/* Programming Languages */}
-  <div className="skills-category">
-    <h3>Programming Languages</h3>
-    <div className="skills-container">
-      <div className="skill-card"><p>C</p></div>
-      <div className="skill-card"><FaJava className="skill-icon"/><p>Java</p></div>
-      <div className="skill-card"><FaHtml5 className="skill-icon"/><p>HTML</p></div>
-      <div className="skill-card"><FaCss3Alt className="skill-icon"/><p>CSS</p></div>
-      <div className="skill-card"><FaJs className="skill-icon"/><p>JavaScript</p></div>
-    </div>
+<div className="skills-category">
+  <h3>Programming Languages</h3>
+  <div className="skills-container">
+    <div className="skill-card"><FaJava className="skill-icon"/><p>Java</p></div>
+    <div className="skill-card"><FaHtml5 className="skill-icon"/><p>HTML</p></div>
+    <div className="skill-card"><FaCss3Alt className="skill-icon"/><p>CSS</p></div>
+    <div className="skill-card"><FaJs className="skill-icon"/><p>JavaScript</p></div>
   </div>
+</div>
 
-  {/* Databases */}
-  <div className="skills-category">
-    <h3>Databases</h3>
-    <div className="skills-container">
-      <div className="skill-card"><SiMongodb className="skill-icon"/><p>MongoDB</p></div>
-      <div className="skill-card"><SiFirebase className="skill-icon"/><p>Firebase</p></div>
-    </div>
+{/* Databases */}
+<div className="skills-category">
+  <h3>Databases</h3>
+  <div className="skills-container">
+    <div className="skill-card"><SiMongodb className="skill-icon"/><p>MongoDB</p></div>
+    <div className="skill-card"><SiFirebase className="skill-icon"/><p>Firebase</p></div>
   </div>
+</div>
 
-  {/* Frameworks & Libraries */}
-  <div className="skills-category">
-    <h3>Frameworks & Libraries</h3>
-    <div className="skills-container">
-      <div className="skill-card"><FaBootstrap className="skill-icon"/><p>Bootstrap</p></div>
-      <div className="skill-card"><FaReact className="skill-icon"/><p>React.js</p></div>
-      <div className="skill-card"><SiExpress className="skill-icon"/><p>Express.js</p></div>
-      <div className="skill-card"><FaNodeJs className="skill-icon"/><p>Node.js</p></div>
-    </div>
+{/* Frameworks & Libraries */}
+<div className="skills-category">
+  <h3>Frameworks & Libraries</h3>
+  <div className="skills-container">
+    <div className="skill-card"><FaBootstrap className="skill-icon"/><p>Bootstrap</p></div>
+    <div className="skill-card"><FaReact className="skill-icon"/><p>React.js</p></div>
+    <div className="skill-card"><SiExpress className="skill-icon"/><p>Express.js</p></div>
+    <div className="skill-card"><FaNodeJs className="skill-icon"/><p>Node.js</p></div>
   </div>
+</div>
 
-  {/* Tools */}
-  <div className="skills-category">
-    <h3>Tools</h3>
-    <div className="skills-container">
-      <div className="skill-card"><FaGithub className="skill-icon"/><p>GitHub</p></div>
-      <div className="skill-card"><p>VS Code</p></div>
-    </div>
+{/* Tools */}
+<div className="skills-category">
+  <h3>Tools</h3>
+  <div className="skills-container">
+    <div className="skill-card"><FaGithub className="skill-icon"/><p>GitHub</p></div>
+    <div className="skill-card"><FaCode className="skill-icon"/><p>VS Code</p></div>
+
   </div>
+</div>
+
 </section>
 <section id="achievements" className="achievements-section">
   <h2 className="achievements-title">Achievements & Certifications</h2>
@@ -346,7 +348,6 @@ function App() {
   </div>
 </section>
 
-
 {/* 🌐 Contact Section */}
 <section id="contact" className="contact-section">
   <h2 className="contact-title">Connect With Me ✨</h2>
@@ -383,9 +384,9 @@ function App() {
     </a>
 
     <a href="https://leetcode.com/u/madhumithamadhumitha/" target="_blank" rel="noopener noreferrer" className="contact-icon leetcode">
-  <i className="fa-solid fa-code"></i>
-  <span>LeetCode</span>
-</a>
+      <i className="fa-solid fa-code"></i>
+      <span>LeetCode</span>
+    </a>
 
     <a href="mailto:madhumitha805632@gmail.com" className="contact-icon mail">
       <i className="fa-solid fa-envelope"></i>
@@ -400,12 +401,29 @@ function App() {
       className="contact-form"
       onSubmit={(e) => {
         e.preventDefault();
-        alert("Thanks for reaching out! I’ll get back to you soon 💌");
+        emailjs.sendForm(
+          'service_cdqwgbl',      // Your EmailJS service ID
+          'template_d036gsk',     // Your EmailJS template ID
+          e.target,               // The form element
+          'hVoE8qiPdv_1ydv9F'    // Your EmailJS public key
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            alert("Thanks for reaching out! I’ll get back to you soon 💌");
+            e.target.reset(); // Clear form after submission
+          },
+          (error) => {
+            console.log(error.text);
+            alert("Failed to send message. Please try again later.");
+          }
+        );
       }}
     >
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea rows="5" placeholder="Your Message..." required></textarea>
+      <input type="text" name="name" placeholder="Your Name" required />
+<input type="email" name="email" placeholder="Your Email" required />
+<textarea name="message" rows="5" placeholder="Your Message..." required></textarea>
+
       <button type="submit" className="send-btn">
         Send Message 🚀
       </button>
