@@ -371,22 +371,28 @@ body:hover {
     margin-bottom: 20px;
   }
 }
-/* Neon Spark Effect */
 .spark {
   position: absolute;
-  width: 1px;          /* smaller spark */
-  height: 1px;         /* smaller spark */
-  border-radius: 10%;
-  background: radial-gradient(circle, #00bfff, transparent);
+  width: 10px; /* bigger spark */
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #00bfff 40%, transparent 70%);
   pointer-events: none;
-  animation: sparkMove 0.6s ease-out forwards; /* shorter duration */
+  animation: sparkMove 1s ease-out forwards;
   z-index: 9999;
-  opacity: 0.1;        /* less bright */
+  opacity: 0.8; /* brighter */
+  box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
 }
 
 @keyframes sparkMove {
-  0% { transform: scale(1) translateY(0); opacity: 1; }
-  100% { transform: scale(1.5) translateY(-30px); opacity: 0; }
+  0% {
+    transform: scale(0.5) translate(0, 0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5) translate(50px, -80px);
+    opacity: 0;
+  }
 }
 
 /* Card reacts to cursor position */
