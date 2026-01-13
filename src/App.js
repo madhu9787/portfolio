@@ -186,7 +186,7 @@ function App() {
       {expanded[2] && (
         <div className="project-details">
           <p>AI-powered platform connecting freelancers and clients in real-time with AI chatbot, Clerk authentication, and live socket communication.</p>
-          <p><strong>Tech Stack:</strong> React, Java, Spring Boot, Socket.IO, AI Integration</p>
+          <p><strong>Tech Stack:</strong> MERN, Socket.IO, AI Integration</p>
         </div>
       )}
     </div>
