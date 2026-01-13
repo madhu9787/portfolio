@@ -22,11 +22,20 @@ import nodeImg from './assets/node.jpg';
 import emailjs from 'emailjs-com';
 import libraryImg from './assets/java.jpg';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import freelanceflowImg from './assets/freelanceflow.png';
+import quizImg from './assets/quiz.png';
+import digitalQueueImg from './assets/digitalqueue.png';
 
-import { FaJava, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaBootstrap, FaGithub,FaCode } from "react-icons/fa";
-import { SiMongodb, SiFirebase, SiExpress} from "react-icons/si";
+import { 
+  FaJava, FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaBootstrap, 
+  FaGithub, FaCode, FaServer, FaTools, FaRobot, FaDatabase 
+} from "react-icons/fa";
+import { SiMongodb, SiFirebase, SiExpress } from "react-icons/si";
+
+
 function App() {
-  const [expanded, setExpanded] = useState([false, false, false, false]);
+  const [expanded, setExpanded] = useState([false, false, false, false, false, false, false, false]);
+
 
   const toggleProject = (index) => {
     const newExpanded = [...expanded];
@@ -111,111 +120,184 @@ function App() {
           </div>
         </div>
       </section>
-{/* Projects Section */}
 <section id="projects" className="projects-section">
   <h2 className="projects-title">Projects</h2>
+
+  {/* 💻 Java Full-Stack (Spring Boot) */}
+  <h3 className="sub-title">💻 Java Full-Stack Projects (Spring Boot)</h3>
   <div className="projects-container">
 
-    {/* Project 1 */}
+    {/* Real-Time Quiz Platform */}
     <div className="project-card">
-      <img src={rentloopImg} alt="RentLoop" className="project-img" />
-      <h3>Design and Development of RentLoop Platform</h3>
+      <img src={quizImg} alt="Real-Time Quiz" className="project-img" />
+      <h3>Real-Time Quiz Platform</h3>
       <div className="buttons-container">
         <button className="toggle-btn" onClick={() => toggleProject(0)}>
           {expanded[0] ? "Hide Details" : "Show Details"}
         </button>
-        <a href="https://github.com/madhu9787/rent-final" target="_blank" className="github-btn">
+        <a href="https://github.com/madhu9787/quiz" target="_blank" className="github-btn">
           View on GitHub
         </a>
       </div>
       {expanded[0] && (
         <div className="project-details">
-          <p>Facilitates renting with smart listings, advanced filters, real-time availability.</p>
-          <p><strong>Duration:</strong> Jul 2025 – Present</p>
-          <p><strong>Tech Stack:</strong> MongoDB, Express.js, React.js, Node.js, Twilio</p>
+          <p>Live quiz system with authentication, leaderboard, and participation for at least 5 players.</p>
+          <p><strong>Tech Stack:</strong> React, Java, Spring Boot, MySQL</p>
         </div>
       )}
     </div>
 
-    {/* Project 2 */}
+    {/* Digital Queue Management */}
     <div className="project-card">
-      <img src={algoArenaImg} alt="Algo Arena" className="project-img" />
-      <h3>Algo Arena - A Gamified Coding Platform</h3>
+      <img src={digitalQueueImg} alt="Digital Queue" className="project-img" />
+      <h3>Digital Queue Management System</h3>
       <div className="buttons-container">
         <button className="toggle-btn" onClick={() => toggleProject(1)}>
           {expanded[1] ? "Hide Details" : "Show Details"}
         </button>
-        <a href="https://github.com/madhu9787/algo" target="_blank" className="github-btn">
+        <a href="https://github.com/madhu9787/digitalqueue" target="_blank" className="github-btn">
           View on GitHub
         </a>
       </div>
       {expanded[1] && (
         <div className="project-details">
-          <p>Built with multiple levels and score tracking to make learning programming interactive.</p>
-          <p><strong>Duration:</strong> Jan 2025 – Mar 2025</p>
-          <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Firebase</p>
+          <p>Token-based queue system with create, delete, and next-call features using Spring Boot backend.</p>
+          <p><strong>Tech Stack:</strong> Java, Spring Boot, HTML, CSS, JavaScript, MySQL</p>
         </div>
       )}
     </div>
 
-    {/* Project 3 */}
+  </div>
+
+  {/* 🌐 MERN / Full-Stack Projects */}
+  <h3 className="sub-title">🌐 MERN / Full-Stack Projects</h3>
+  <div className="projects-container">
+
+    {/* FreelanceFlow - Ongoing */}
     <div className="project-card">
-      <img src={smartClassroomImg} alt="Smart Classroom" className="project-img" />
-      <h3>Smart Classroom Management System - Hackathon Project</h3>
+      <img src={freelanceflowImg} alt="FreelanceFlow" className="project-img" />
+      <h3>FreelanceFlow – AI Powered Freelancing Platform (Ongoing)</h3>
       <div className="buttons-container">
         <button className="toggle-btn" onClick={() => toggleProject(2)}>
           {expanded[2] ? "Hide Details" : "Show Details"}
         </button>
-        <a href="https://github.com/praveenkumar0031/SIHproject" target="_blank" className="github-btn">
-          View on GitHub
-        </a>
+        <span className="github-btn">🚧 In Progress</span>
       </div>
       {expanded[2] && (
         <div className="project-details">
-          <p>Developed an interactive system with Twilio, automated attendance, and real-time reporting.</p>
-          <p><strong>Duration:</strong> Sep 2024 – Dec 2024</p>
-          <p><strong>Tech Stack:</strong> Twilio, HTML, CSS, JavaScript, Firebase</p>
+          <p>AI-powered platform connecting freelancers and clients in real-time with AI chatbot, Clerk authentication, and live socket communication.</p>
+          <p><strong>Tech Stack:</strong> React, Java, Spring Boot, Socket.IO, AI Integration</p>
         </div>
       )}
     </div>
 
-    {/* Project 4 */}
+    {/* RentLoop */}
     <div className="project-card">
-      <img src={bloodBankImg} alt="Blood Bank" className="project-img" />
-      <h3>Blood Bank Management System</h3>
+      <img src={rentloopImg} alt="RentLoop" className="project-img" />
+      <h3>Design and Development of RentLoop Platform</h3>
       <div className="buttons-container">
         <button className="toggle-btn" onClick={() => toggleProject(3)}>
           {expanded[3] ? "Hide Details" : "Show Details"}
         </button>
-        <a href="https://github.com/madhu9787/BBM.github.io" target="_blank" className="github-btn">
+        <a href="https://github.com/madhu9787/rent-final" target="_blank" className="github-btn">
           View on GitHub
         </a>
       </div>
       {expanded[3] && (
         <div className="project-details">
-          <p>Developed a management system to track blood donors, stock, and availability efficiently.</p>
-          <p><strong>Duration:</strong> Mar 2024 – Jun 2024</p>
-          <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Node.js</p>
+          <p>Facilitates renting with smart listings, advanced filters, and real-time availability.</p>
+          <p><strong>Tech Stack:</strong> MongoDB, Express.js, React.js, Node.js, Twilio</p>
         </div>
       )}
     </div>
 
-    {/* Project 5 */}
+  </div>
+
+  {/* 🌐 Web Development / Front-End Projects */}
+  <h3 className="sub-title">🌐 Web Development / Front-End Projects</h3>
+  <div className="projects-container">
+
+    {/* Algo Arena */}
     <div className="project-card">
-      <img src={libraryImg} alt="Library Management System" className="project-img" />
-      <h3>Java Console-based Library Management System</h3>
+      <img src={algoArenaImg} alt="Algo Arena" className="project-img" />
+      <h3>Algo Arena - A Gamified Coding Platform</h3>
       <div className="buttons-container">
         <button className="toggle-btn" onClick={() => toggleProject(4)}>
           {expanded[4] ? "Hide Details" : "Show Details"}
         </button>
-        <a href="https://github.com/madhu9787/console-java" target="_blank" className="github-btn">
+        <a href="https://github.com/madhu9787/algo" target="_blank" className="github-btn">
           View on GitHub
         </a>
       </div>
       {expanded[4] && (
         <div className="project-details">
-          <p>Console-based system to manage library books, users, and borrowing transactions efficiently.</p>
-          <p><strong>Duration:</strong> Feb 2024 – Mar 2024</p>
+          <p>Interactive coding platform with multiple levels and score tracking.</p>
+          <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Firebase</p>
+        </div>
+      )}
+    </div>
+
+    {/* Smart Classroom */}
+    <div className="project-card">
+      <img src={smartClassroomImg} alt="Smart Classroom" className="project-img" />
+      <h3>Smart Classroom Management System - Hackathon</h3>
+      <div className="buttons-container">
+        <button className="toggle-btn" onClick={() => toggleProject(5)}>
+          {expanded[5] ? "Hide Details" : "Show Details"}
+        </button>
+        <a href="https://github.com/praveenkumar0031/SIHproject" target="_blank" className="github-btn">
+          View on GitHub
+        </a>
+      </div>
+      {expanded[5] && (
+        <div className="project-details">
+          <p>Automated attendance and real-time reporting with Twilio integration.</p>
+          <p><strong>Tech Stack:</strong> Twilio, HTML, CSS, JavaScript, Firebase</p>
+        </div>
+      )}
+    </div>
+
+    {/* Blood Bank */}
+    <div className="project-card">
+      <img src={bloodBankImg} alt="Blood Bank" className="project-img" />
+      <h3>Blood Bank Management System</h3>
+      <div className="buttons-container">
+        <button className="toggle-btn" onClick={() => toggleProject(6)}>
+          {expanded[6] ? "Hide Details" : "Show Details"}
+        </button>
+        <a href="https://github.com/madhu9787/BBM.github.io" target="_blank" className="github-btn">
+          View on GitHub
+        </a>
+      </div>
+      {expanded[6] && (
+        <div className="project-details">
+          <p>Tracks blood donors, stock, and availability efficiently.</p>
+          <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Node.js</p>
+        </div>
+      )}
+    </div>
+
+  </div>
+
+  {/* 🖥 Console-Based Java Projects */}
+  <h3 className="sub-title">🖥 Console-Based Java Projects</h3>
+  <div className="projects-container">
+
+    {/* Library Management */}
+    <div className="project-card">
+      <img src={libraryImg} alt="Library Management System" className="project-img" />
+      <h3>Java Console-based Library Management System</h3>
+      <div className="buttons-container">
+        <button className="toggle-btn" onClick={() => toggleProject(7)}>
+          {expanded[7] ? "Hide Details" : "Show Details"}
+        </button>
+        <a href="https://github.com/madhu9787/console-java" target="_blank" className="github-btn">
+          View on GitHub
+        </a>
+      </div>
+      {expanded[7] && (
+        <div className="project-details">
+          <p>Console-based system for managing books, users, and borrowing transactions.</p>
           <p><strong>Tech Stack:</strong> Java</p>
         </div>
       )}
@@ -225,51 +307,69 @@ function App() {
 </section>
 
 
-  <section id="skills" className="skills-section">
+<section id="skills" className="skills-section">
   <h2 className="skills-title">Skills</h2>
 
   {/* Programming Languages */}
-<div className="skills-category">
-  <h3>Programming Languages</h3>
-  <div className="skills-container">
-    <div className="skill-card"><FaJava className="skill-icon"/><p>Java</p></div>
-    <div className="skill-card"><FaHtml5 className="skill-icon"/><p>HTML</p></div>
-    <div className="skill-card"><FaCss3Alt className="skill-icon"/><p>CSS</p></div>
-    <div className="skill-card"><FaJs className="skill-icon"/><p>JavaScript</p></div>
+  <div className="skills-category">
+    <h3>Programming Languages</h3>
+    <div className="skills-container">
+      <div className="skill-card"><FaJava className="skill-icon" /><p>Java</p></div>
+      <div className="skill-card"><FaHtml5 className="skill-icon" /><p>HTML</p></div>
+      <div className="skill-card"><FaCss3Alt className="skill-icon" /><p>CSS</p></div>
+      <div className="skill-card"><FaJs className="skill-icon" /><p>JavaScript</p></div>
+    </div>
   </div>
-</div>
 
-{/* Databases */}
-<div className="skills-category">
-  <h3>Databases</h3>
-  <div className="skills-container">
-    <div className="skill-card"><SiMongodb className="skill-icon"/><p>MongoDB</p></div>
-    <div className="skill-card"><SiFirebase className="skill-icon"/><p>Firebase</p></div>
+  {/* Databases */}
+  <div className="skills-category">
+    <h3>Databases</h3>
+    <div className="skills-container">
+      <div className="skill-card"><SiMongodb className="skill-icon" /><p>MongoDB</p></div>
+      <div className="skill-card"><FaDatabase className="skill-icon" /><p>MySQL</p></div>
+      <div className="skill-card"><SiFirebase className="skill-icon" /><p>Firebase</p></div>
+    </div>
   </div>
-</div>
 
-{/* Frameworks & Libraries */}
-<div className="skills-category">
-  <h3>Frameworks & Libraries</h3>
-  <div className="skills-container">
-    <div className="skill-card"><FaBootstrap className="skill-icon"/><p>Bootstrap</p></div>
-    <div className="skill-card"><FaReact className="skill-icon"/><p>React.js</p></div>
-    <div className="skill-card"><SiExpress className="skill-icon"/><p>Express.js</p></div>
-    <div className="skill-card"><FaNodeJs className="skill-icon"/><p>Node.js</p></div>
+  {/* Frameworks & Libraries */}
+  <div className="skills-category">
+    <h3>Frameworks & Libraries</h3>
+    <div className="skills-container">
+      <div className="skill-card"><FaTools className="skill-icon" /><p>Spring Boot</p></div>
+      <div className="skill-card"><FaTools className="skill-icon" /><p>Spring Security</p></div>
+      <div className="skill-card"><FaTools className="skill-icon" /><p>Spring Data JPA</p></div>
+      <div className="skill-card"><FaTools className="skill-icon" /><p>Spring MVC</p></div>
+      <div className="skill-card"><FaReact className="skill-icon" /><p>React.js</p></div>
+      <div className="skill-card"><SiExpress className="skill-icon" /><p>Express.js</p></div>
+      <div className="skill-card"><FaNodeJs className="skill-icon" /><p>Node.js</p></div>
+      <div className="skill-card"><FaBootstrap className="skill-icon" /><p>Bootstrap</p></div>
+    </div>
   </div>
-</div>
+
+  {/* Other Technologies / Integrations */}
+  <div className="skills-category">
+    <h3>Other Technologies / Integrations</h3>
+    <div className="skills-container">
+      <div className="skill-card"><FaRobot className="skill-icon" /><p>AI Chatbot Integration</p></div>
+      <div className="skill-card"><FaTools className="skill-icon" /><p>Clerk Authentication</p></div>
+      <div className="skill-card"><FaServer className="skill-icon" /><p>WebSocket / Socket.IO</p></div>
+      <div className="skill-card"><FaServer className="skill-icon" /><p>VAPI</p></div>
+    </div>
+  </div>
 
 {/* Tools */}
 <div className="skills-category">
   <h3>Tools</h3>
   <div className="skills-container">
-    <div className="skill-card"><FaGithub className="skill-icon"/><p>GitHub</p></div>
-    <div className="skill-card"><FaCode className="skill-icon"/><p>VS Code</p></div>
-
+    <div className="skill-card"><FaGithub className="skill-icon" /><p>GitHub</p></div>
+    <div className="skill-card"><FaCode className="skill-icon" /><p>VS Code</p></div>
+    <div className="skill-card"><FaTools className="skill-icon" /><p>Postman</p></div>
   </div>
 </div>
 
 </section>
+
+
 <section id="achievements" className="achievements-section">
   <h2 className="achievements-title">Achievements & Certifications</h2>
 
